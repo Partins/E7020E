@@ -1,35 +1,43 @@
-# A cool radioactivity sensor
-The goal of this project is to design a PCB for a radioactivity sensor can 
-give the user indication of the current activity in real time.
+E7020E — Embedded System Design; Gamma Radiation Dosimeter
+---
+The goal of this project is to design a PCB for handheld gamma radiation detection and measurement,
+reporting the sensory inputs to the user via visual and auditory means in real-time.
 
 ### High level specification
-- **Purpose** Detect radioactivity levels and present it to the user
-- **Limitations** Can't detect in all directions simontaniously. Cooling (maybe)
-- **Behaviour** Using a state of the art sensor we'll be able to give the user feedback of the radiation levels using sound or a display.
+We aim to design a hend-held device that:
+
+* measures photon radiation using an applicable sensor;
+* displays the [equivalent dose](https://en.wikipedia.org/wiki/Equivalent_dose) on a [seven-segmented display](https://en.wikipedia.org/wiki/Seven-segment_display) (or alternatively, a LCD);
+* exposes a user button to turn the device on/off;
+* notifies each radiation event with a click of a speaker/buzzer; and
+* broadcasts recorded dose over LoRa.
+
+We will limit ourselves to the above and not design the following (unless we have sufficient time):
+
+* Detect and calculate a vector towards the source (using a rotating slit around the sensor; vector derived from slit angle);
+* Detect and calculate a relative point on a plane where the source could be (two vectors required; source where vectors intersect)
 
 ### Safety
-- Not electrocute
-- Maybe High Voltage, be careful
-- Will have a case. No sharp edges
+The device should not electrocute the user, not should the designed case have any sharp edges.
+
 ### Liveness
-- Present the data to the user using sound or a display. Ultimately position the radiation source using a sweeping servo
-- Calibration
+Eventually, the device shall report a dose and event to the user, using the display and buzzer, respectively.
 
 ### Robustness
-- Not possible to connect power source the wrong way
-- Validation of the data
+N/A; we rely on correct data from the gamma sensor. Further, only transmit data from the LoRa module.
 
 ### Security
-- Not sure yet
+N/A.
 
-## Basic functionalities
-- **ADC:** The sensor is analog so it's covered
-- **PWM:** For the sweeping servo or an indicator LED
-- **UART:** USB 
+## Basic functionalities (grade 3)
+* **GPIO:** button for turning the system on/off;
+* **ADC:** interpretation of sensory data;
+* **PWM:** for signaling a radiation event using a speaker (alt. for rotating the slit); and
+* **UART:** USB/pins for debugging purposes.
 
-## Extra functionalities
-- **I2C:** The OLED display communicates via i2c
-- **Low Power:** Poll data every hour or something
-- **Positioning:** Is it possible to locate the source by moving the sensor?
-- **LoRa:** Send data via LoRa. 
-
+## Extra functionalities / ensurances (grade 4, 5)
+* **I2C:** communication with an LDC display;
+* **Low Power:** a software issue (rely on interrupts, etc);
+* **Vector derivation:** see above;
+* **LoRa:** broadcast dosage over LoRa; and/or
+* **Software correctness:** symbolic verification (KLEE, etc).
