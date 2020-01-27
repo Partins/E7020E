@@ -6,7 +6,7 @@ reporting the sensory inputs to the user via visual and auditory means in real-t
 ### High level specification
 We aim to design a hend-held device that:
 
-* measures photon radiation using an applicable sensor;
+* measures photon radiation using an applicable sensor (Grepit, requires a 10bit, 10Msample ADC);
 * displays the [equivalent dose](https://en.wikipedia.org/wiki/Equivalent_dose) on a [seven-segmented display](https://en.wikipedia.org/wiki/Seven-segment_display) (or alternatively, a LCD);
 * exposes a user button to turn the device on/off;
 * notifies each radiation event with a click of a speaker/buzzer; and
