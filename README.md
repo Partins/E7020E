@@ -14,8 +14,8 @@ We aim to design a hend-held device that:
 
 We will limit ourselves to the above and not design the following (unless we have sufficient time):
 
-* Detect and calculate a vector towards the source (using a rotating slit around the sensor; vector derived from slit angle);
-* Detect and calculate a relative point on a plane where the source could be (two vectors required; source where vectors intersect)
+* detect and calculate a vector towards the source (using a rotating slit around the sensor; vector derived from slit angle); and afterwards
+* detect and calculate a relative point on a plane where the source could be (two vectors required; source where vectors intersect).
 
 ### Safety
 The device should not electrocute the user, not should the designed case have any sharp edges.
@@ -24,7 +24,7 @@ The device should not electrocute the user, not should the designed case have an
 Eventually, the device shall report a dose and event to the user, using the display and buzzer, respectively.
 
 ### Robustness
-N/A; we rely on correct data from the gamma sensor. Further, only transmit data from the LoRa module.
+N/A; we rely on correct data from the gamma sensor. Further, data will only be transmitted from the LoRa module.
 
 ### Security
 N/A.
@@ -36,7 +36,7 @@ N/A.
 * **UART:** USB/pins for debugging purposes.
 
 ## Extra functionalities / ensurances (grade 4, 5)
-* **I2C:** communication with an LDC display;
+* **I2C:** communication with an LCD display;
 * **Low Power:** a software issue (rely on interrupts, etc);
 * **Vector derivation:** see above;
 * **LoRa:** broadcast dosage over LoRa; and/or
