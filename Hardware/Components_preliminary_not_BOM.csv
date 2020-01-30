@@ -1,1 +1,7 @@
-
+Part;Link;Datasheet link;Comment;Current;Voltage
+ADC;https://se.rs-online.com/web/p/general-purpose-adcs/8175736/;http://www.ti.com/lit/ds/symlink/ads7884.pdf;3MSPS;;
+;https://se.rs-online.com/web/p/general-purpose-adcs/8209328/;https://docs.rs-online.com/7741/0900766b815183f6.pdf;3MSPS;;
+Screen;https://b2c.cdon.se/hem-tradgard/oled-display-0-96-tum-med-128x64-vita-pixlar-i2c-ssd1306-p50542494;https://www.olimex.com/Products/Modules/LCD/MOD-OLED-128x64/resources/SSD1306.pdf;;30mA;3.3V
+MCU;CMWX1ZZABZ-078 ;https://wireless.murata.com/pub/RFM/data/type_abz.pdf;;128mA;3.3V
+Battery;;;;;
+ADC;https://se.rs-online.com/web/p/general-purpose-adcs/7589777/;;;;
